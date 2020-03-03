@@ -2,12 +2,15 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CityRepository")
+ * @ApiResource()
  */
 class City
 {
@@ -31,6 +34,8 @@ class City
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Person", mappedBy="city")
+     * @ApiSubresource()
+     *
      */
     private $people;
 
