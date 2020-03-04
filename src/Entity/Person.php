@@ -65,7 +65,7 @@ class Person
     private $city;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ContractedDisease", mappedBy="people", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\ContractedDisease", mappedBy="person", cascade={"persist"})
      * @ApiSubresource()
      */
     private $contractedDiseases;

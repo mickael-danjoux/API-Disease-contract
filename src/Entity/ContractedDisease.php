@@ -42,7 +42,7 @@ class ContractedDisease
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="contractedDiseases", cascade={"persist"})
      */
-    private $people;
+    private $person;
 
     public function __construct()
     {
@@ -81,18 +81,19 @@ class ContractedDisease
     /**
      * @return Person
      */
-    public function getPeople()
+    public function getPerson()
     {
-        return $this->people;
+        return $this->person;
     }
 
     /**
-     * @param Person $people
+     * @param Person $person
      */
-    public function setPeople($people): void
+    public function setPerson($person): void
     {
-        $this->people = $people;
+        $this->person = $person;
     }
+
 
 
 

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbbc20a4-b56d-49e1-bdd5-34a4fab1ed85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/DiseaseAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/City.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/ContractedDisease.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContractedDisease.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Disease.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Disease.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Person.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +212,7 @@
       <workItem from="1583250911797" duration="185000" />
       <workItem from="1583251113350" duration="7369000" />
       <workItem from="1583264062503" duration="4860000" />
-      <workItem from="1583325670144" duration="7723000" />
+      <workItem from="1583325670144" duration="7850000" />
     </task>
     <servers />
   </component>
@@ -232,10 +228,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="701" y="360" width="507" height="393" key="#com.intellij.fileTypes.FileTypeChooser/0.30.1920.1050@0.30.1920.1050" timestamp="1583262899079" />
-    <state x="746" y="274" width="417" height="565" key="#com.intellij.ide.util.MemberChooser" timestamp="1583336963721">
+    <state x="746" y="274" width="417" height="565" key="#com.intellij.ide.util.MemberChooser" timestamp="1583337300901">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="746" y="274" width="417" height="565" key="#com.intellij.ide.util.MemberChooser/0.30.1920.1050@0.30.1920.1050" timestamp="1583336963721" />
+    <state x="746" y="274" width="417" height="565" key="#com.intellij.ide.util.MemberChooser/0.30.1920.1050@0.30.1920.1050" timestamp="1583337300901" />
     <state x="743" y="313" width="424" height="487" key="FileChooserDialogImpl" timestamp="1583325892455">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
