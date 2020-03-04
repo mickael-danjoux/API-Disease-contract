@@ -10,7 +10,14 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContractedDiseaseRepository")
- * @ApiResource()
+ * @ApiResource(
+ *     itemOperations={
+ *          "get"
+ *     },
+ *     collectionOperations={
+ *           "get"
+ *     }
+ * )
  */
 class ContractedDisease
 {
@@ -33,13 +40,13 @@ class ContractedDisease
     private $contractedAt;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Person", inversedBy="contractedDiseases")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="contractedDiseases", cascade={"persist"})
      */
     private $people;
 
     public function __construct()
     {
-        $this->people = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -72,28 +79,23 @@ class ContractedDisease
     }
 
     /**
-     * @return Collection|Person[]
+     * @return Person
      */
-    public function getPeople(): Collection
+    public function getPeople()
     {
         return $this->people;
     }
 
-    public function addPerson(Person $person): self
+    /**
+     * @param Person $people
+     */
+    public function setPeople($people): void
     {
-        if (!$this->people->contains($person)) {
-            $this->people[] = $person;
-        }
-
-        return $this;
+        $this->people = $people;
     }
 
-    public function removePerson(Person $person): self
-    {
-        if ($this->people->contains($person)) {
-            $this->people->removeElement($person);
-        }
 
-        return $this;
-    }
+
+
+
 }

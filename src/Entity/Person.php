@@ -7,10 +7,21 @@ use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PersonRepository")
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={
+ *         "groups"={"people_read"}
+ *     },
+ *     itemOperations={
+ *          "get"
+ *     },
+ *     collectionOperations={
+ *           "get"
+ *     }
+ * )
  */
 class Person
 {
@@ -18,37 +29,43 @@ class Person
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"people_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"people_read"})
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"people_read"})
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"people_read"})
      */
     private $gender;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"people_read"})
      */
     private $birthDate;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\City", inversedBy="people")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"people_read"})
      */
     private $city;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\ContractedDisease", mappedBy="people")
+     * @ORM\OneToMany(targetEntity="App\Entity\ContractedDisease", mappedBy="people", cascade={"persist"})
      * @ApiSubresource()
      */
     private $contractedDiseases;

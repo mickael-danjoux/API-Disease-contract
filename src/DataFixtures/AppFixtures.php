@@ -106,7 +106,7 @@ class AppFixtures extends Fixture
                     $contracted = new ContractedDisease();
                     $contracted->setContractedAt($this->faker->dateTimeBetween($person->getBirthDate(), 'now'));
                     $contracted->setDisease($this->diseases[array_rand($this->diseases)]);
-                    $person->addContractedDisease($contracted);
+                    $contracted->setPeople($person);
                     $this->contractedDiseases[] = $contracted;
                     $this->em->persist($contracted);
                 }

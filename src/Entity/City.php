@@ -7,10 +7,18 @@ use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CityRepository")
- * @ApiResource()
+ * @ApiResource(
+ *      itemOperations={
+ *          "get"
+ *     },
+ *     collectionOperations={
+ *           "get"
+ *     }
+ * )
  */
 class City
 {
@@ -29,6 +37,7 @@ class City
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"people_read"})
      */
     private $name;
 

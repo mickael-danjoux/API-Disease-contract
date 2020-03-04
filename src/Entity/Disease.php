@@ -9,8 +9,31 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @todo
+ * route : return pour une maladie nombre filles/mec,
+ * route : return pour une maladie nombre cas depuis debut année
+ * route : return pour une maladie nombre de cas par années
+ */
+
+/**
  * @ORM\Entity(repositoryClass="App\Repository\DiseaseRepository")
- * @ApiResource()
+ * @ApiResource(
+ *      itemOperations={
+ *          "get",
+ *          "get_informations_gender"={
+ *                  "method"="GET",
+ *                  "path"="/diseases/{id}/information/gender",
+ *                  "controller"="App\Controller\DiseaseAction::genderInformation",
+ *                  "openapi_context"={
+ *                      "summary"="Retrives informations about a disease",
+ *                  },
+ *                  "defaults"={"_api_receive"=false,"_api_respond"=false},
+ *          },
+ *     },
+ *     collectionOperations={
+ *           "get"
+ *     }
+ * )
  */
 class Disease
 {
