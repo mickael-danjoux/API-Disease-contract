@@ -85,8 +85,21 @@ class DiseaseAction
             "contractedAt" => []
         ];
 
-        $data["contractedAt"] =  $this->contractRepo->findByDiseaseOrderByYears($disease);
+        $countYear = $this->contractRepo->findByDiseaseOrderByYears($disease);
 
+        foreach ($countYear as $year) {
+            $data["contractedAt"][$year["year"]] = $year["count"];
+        }
+
+        $firstYear = array_key_first($data["contractedAt"]);
+        $lastYear = array_key_last($data["contractedAt"]);
+
+        for( $i = $firstYear; $i <= $lastYear; $i++ ){
+            if(!array_key_exists($i, $data["contractedAt"])) {
+                $data["contractedAt"][$i] = 0;
+            }
+        }
+        ksort($data["contractedAt"]);
         $sentData = $this->normalizer->normalize($data);
         return new JsonResponse($sentData,200);
     }
