@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\ContractedDisease;
+use App\Entity\Disease;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -47,4 +48,31 @@ class ContractedDiseaseRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findByDate($year = null, Disease $disease)
+    {
+
+
+        if ($year === null) {
+            $year = (int) date('Y');
+        }
+
+
+        $startDate = new \DateTime("$year-01-01");
+        $endDate = new \DateTime("$year-12-31");
+
+
+        $qb = $this->createQueryBuilder('object');
+        $qb->where('object.contractedAt BETWEEN :start AND :end' );
+        $qb->andWhere('object.disease = :disease');
+        $qb->setParameter('disease', $disease);
+        $qb->setParameter('start', $startDate);
+        $qb->setParameter('end', $endDate);
+
+
+        return $qb->getQuery()->getResult();
+    }
+
+
+
 }
