@@ -65,6 +65,8 @@ class DiseaseAction
     public function yearInformation(Disease $disease, string $year ):JsonResponse
     {
         $data = [
+            "year" => $year,
+            "disease" => $disease->getName(),
             "count" => 0
         ];
 
@@ -75,10 +77,15 @@ class DiseaseAction
 
     }
 
-    public function allYearsInformation():JsonResponse
+    public function contractedByYearInformation(Disease $disease):JsonResponse
     {
 
-        $data = [];
+        $data = [
+            "disease" => $disease->getName(),
+            "contractedAt" => []
+        ];
+
+        $data["contractedAt"] =  $this->contractRepo->findByDiseaseOrderByYears($disease);
 
         $sentData = $this->normalizer->normalize($data);
         return new JsonResponse($sentData,200);

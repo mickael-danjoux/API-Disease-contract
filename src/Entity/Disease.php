@@ -10,8 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @todo
- * route : return pour une maladie nombre cas depuis debut année
- * route : return pour une maladie nombre de cas par années
  */
 
 /**
@@ -28,19 +26,19 @@ use Doctrine\ORM\Mapping as ORM;
  *                  },
  *                  "defaults"={"_api_receive"=false,"_api_respond"=false},
  *          },
- *         "get_informations_contract_year"={
+ *         "get_informations_contract_all_years"={
  *                  "method"="GET",
- *                  "path"="/diseases/{id}/information/{year}",
- *                  "controller"="App\Controller\DiseaseAction::yearInformation",
+ *                  "path"="/diseases/{id}/information/contracted_by_year",
+ *                  "controller"="App\Controller\DiseaseAction::contractedByYearInformation",
  *                  "openapi_context"={
  *                      "summary"="Retrives informations about a disease",
  *                  },
  *                  "defaults"={"_api_receive"=false,"_api_respond"=false},
  *          },
- *         "get_informations_contract_all_years"={
+ *         "get_informations_contract_year"={
  *                  "method"="GET",
- *                  "path"="/diseases/{id}/information/year",
- *                  "controller"="App\Controller\DiseaseAction::allYearsInformation",
+ *                  "path"="/diseases/{id}/information/{year}",
+ *                  "controller"="App\Controller\DiseaseAction::yearInformation",
  *                  "openapi_context"={
  *                      "summary"="Retrives informations about a disease",
  *                  },

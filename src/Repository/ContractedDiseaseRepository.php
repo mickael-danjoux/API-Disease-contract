@@ -52,11 +52,9 @@ class ContractedDiseaseRepository extends ServiceEntityRepository
     public function findByDate($year = null, Disease $disease)
     {
 
-
         if ($year === null) {
             $year = (int) date('Y');
         }
-
 
         $startDate = new \DateTime("$year-01-01");
         $endDate = new \DateTime("$year-12-31");
@@ -71,6 +69,20 @@ class ContractedDiseaseRepository extends ServiceEntityRepository
 
 
         return $qb->getQuery()->getResult();
+    }
+
+    public function findByDiseaseOrderByYears( Disease $disease)
+    {
+        $conn = $this->getEntityManager()
+            ->getConnection();
+
+        $sql = "SELECT count(id), strftime('%Y',contracted_at) as year FROM contracted_disease WHERE disease_id = :id ";
+        $sql .= "GROUP BY year ";
+        $sql .= "ORDER BY year";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue('id', $disease->getId());
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 
 
