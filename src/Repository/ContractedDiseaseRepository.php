@@ -76,7 +76,7 @@ class ContractedDiseaseRepository extends ServiceEntityRepository
         $conn = $this->getEntityManager()
             ->getConnection();
 
-        $sql = "SELECT count(id), strftime('%Y',contracted_at) as year FROM contracted_disease WHERE disease_id = :id ";
+        $sql = "SELECT count(id) as count, strftime('%Y',contracted_at) as year FROM contracted_disease WHERE disease_id = :id ";
         $sql .= "GROUP BY year ";
         $sql .= "ORDER BY year";
         $stmt = $conn->prepare($sql);
