@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  *           "get",
  *           "get_count_contract_year"={
  *                  "method"="GET",
- *                  "path"="/contracted_diseases/{year}",
+ *                  "path"="/contracted_diseases/information/{year}",
  *                  "controller"="App\Controller\ContractedDiseaseAction::yearInformation",
  *                  "openapi_context"={
  *                      "summary"="Retrives count contracted for one year",
