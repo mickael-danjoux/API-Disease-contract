@@ -49,7 +49,7 @@ class ContractedDiseaseRepository extends ServiceEntityRepository
     }
     */
 
-    public function findByDate($year = null, Disease $disease)
+    public function findByDate($year = null, Disease $disease = null)
     {
 
         if ($year === null) {
@@ -62,8 +62,11 @@ class ContractedDiseaseRepository extends ServiceEntityRepository
 
         $qb = $this->createQueryBuilder('object');
         $qb->where('object.contractedAt BETWEEN :start AND :end' );
-        $qb->andWhere('object.disease = :disease');
-        $qb->setParameter('disease', $disease);
+        if( $disease instanceof Disease){
+            $qb->andWhere('object.disease = :disease');
+            $qb->setParameter('disease', $disease);
+        }
+
         $qb->setParameter('start', $startDate);
         $qb->setParameter('end', $endDate);
 
@@ -83,6 +86,24 @@ class ContractedDiseaseRepository extends ServiceEntityRepository
         $stmt->bindValue('id', $disease->getId());
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function countContractedByCities(){
+        $conn = $this->getEntityManager()
+            ->getConnection();
+
+        $sql = "SELECT c.id as id, c.name as city, count(cd.id) as count ";
+        $sql .= "FROM contracted_disease cd ";
+        $sql .= "JOIN person p on cd.person_id = p.id ";
+        $sql .= "JOIN city c on c.id = p.city_id ";
+        $sql .= "GROUP BY c.id ";
+        $sql .= "ORDER BY c.name ";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
     }
 
 

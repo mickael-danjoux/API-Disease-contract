@@ -13,7 +13,16 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ORM\Entity(repositoryClass="App\Repository\CityRepository")
  * @ApiResource(
  *      itemOperations={
- *          "get"
+ *          "get_count_contract"={
+ *                  "method"="GET",
+ *                  "path"="/cities/information",
+ *                  "controller"="App\Controller\CityAction::getInformation",
+ *                  "openapi_context"={
+ *                      "summary"="Retrives count contracted for cities",
+ *                  },
+ *                  "defaults"={"_api_receive"=false,"_api_respond"=false},
+ *          },
+ *          "get",
  *     },
  *     collectionOperations={
  *           "get"

@@ -15,7 +15,16 @@ use Doctrine\ORM\Mapping as ORM;
  *          "get"
  *     },
  *     collectionOperations={
- *           "get"
+ *           "get",
+ *           "get_count_contract_year"={
+ *                  "method"="GET",
+ *                  "path"="/contracted_diseases/{year}",
+ *                  "controller"="App\Controller\ContractedDiseaseAction::yearInformation",
+ *                  "openapi_context"={
+ *                      "summary"="Retrives count contracted for one year",
+ *                  },
+ *                  "defaults"={"_api_receive"=false,"_api_respond"=false},
+ *          },
  *     }
  * )
  */
