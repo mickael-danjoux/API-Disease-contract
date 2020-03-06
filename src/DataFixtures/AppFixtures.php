@@ -40,9 +40,9 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $this->createCities(50);
+        $this->createCities(20);
         $this->createDiseases();
-        $this->createPeople(300);
+        $this->createPeople(1000);
         $this->setDiseasesToPeople();
 
         $this->em->flush();
@@ -63,13 +63,20 @@ class AppFixtures extends Fixture
     {
         $tab = [
             "Appendicite", "Anémie aplasique",
+            "Bronchiolite",
             "Constipation", "Coqueluche", "Coxarthrose",
-            "Eczéma", "Epiphysiolyse",
-            "Fausse couche", "Fièvre jaune",
+            "Dengue",
+            "Eczéma", "Epiphysiolyse", "Érythème infectieux",
+            "Fièvre de Lassa", "Fièvre jaune",
             "Goutte", "Grippe", "Grippe aviaire",
+            "Hépatite A","Hépatite E",
             "Infection urinaire",
-            "Rhinopharyngite",
-            "Salmonellose", "Sida/VIH"
+            "Mononucléose infectieuse",
+            "Oreillons",
+            "Rage","Rhinopharyngite","Rougeole",
+            "Salmonellose", "Sida/VIH",
+            "Varicelle","Virus Ebola","Virus Zika",
+            "Zona"
 
         ];
 
