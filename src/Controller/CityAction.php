@@ -41,7 +41,6 @@ class CityAction
        ];
 
        $data = $this->contractRepo->countContractedByCities();
-       dd($data);
        $sentData = $this->normalizer->normalize($data);
 
        return new JsonResponse($sentData,200);
