@@ -22,7 +22,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *                  },
  *                  "defaults"={"_api_receive"=false,"_api_respond"=false},
  *          },
- *          "get",
+ *         "get",
+ *
  *     },
  *     collectionOperations={
  *           "get"
@@ -82,7 +83,6 @@ class City
     {
         $this->name = $name;
     }
-
 
 
     public function getPostCode(): ?string

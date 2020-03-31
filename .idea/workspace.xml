@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbbc20a4-b56d-49e1-bdd5-34a4fab1ed85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/Entity/CitiesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Entity/ContractedDiseasesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Entity/DiseasesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Entity/PeopleTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/API-Disease-contract.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/API-Disease-contract.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CityAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CityAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/City.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +179,7 @@
       <path value="$PROJECT_DIR$/vendor/api-platform/core" />
       <path value="$PROJECT_DIR$/vendor/api-platform/api-pack" />
       <path value="$PROJECT_DIR$/vendor/beberlei/doctrineextensions" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YcnmceZJRlsZFDBSVJTE73ZjpL" />
@@ -184,7 +194,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../disease-dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../isitech/projects/CD/esi4-test" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ServiceViewManager">
@@ -212,7 +222,12 @@
       <workItem from="1583250911797" duration="185000" />
       <workItem from="1583251113350" duration="7369000" />
       <workItem from="1583264062503" duration="4860000" />
-      <workItem from="1583325670144" duration="29951000" />
+      <workItem from="1583325670144" duration="30610000" />
+      <workItem from="1583525816451" duration="79000" />
+      <workItem from="1585553765785" duration="4710000" />
+      <workItem from="1585641200087" duration="3213000" />
+      <workItem from="1585653341876" duration="98000" />
+      <workItem from="1585653453117" duration="1817000" />
     </task>
     <servers />
   </component>
@@ -232,25 +247,33 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="746" y="274" width="417" height="565" key="#com.intellij.ide.util.MemberChooser/0.30.1920.1050@0.30.1920.1050" timestamp="1583337300901" />
-    <state x="693" y="313" width="524" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583489014707">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="638" y="282" width="624" height="975" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585641260898">
+      <screen x="0" y="241" width="1920" height="1050" />
     </state>
+    <state x="638" y="282" width="624" height="975" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.241.1920.1050/1920.0.1440.900@0.241.1920.1050" timestamp="1585641260898" />
+    <state x="693" y="524" width="524" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585559964378">
+      <screen x="0" y="241" width="1920" height="1050" />
+    </state>
+    <state x="693" y="524" width="524" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.241.1920.1050/1920.0.1440.900@0.241.1920.1050" timestamp="1585559964378" />
     <state x="693" y="313" width="524" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583489014707" />
-    <state x="743" y="313" width="424" height="487" key="FileChooserDialogImpl" timestamp="1583325892455">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="743" y="524" width="424" height="487" key="FileChooserDialogImpl" timestamp="1585643078919">
+      <screen x="0" y="241" width="1920" height="1050" />
     </state>
-    <state x="743" y="313" width="424" height="487" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1583325892455" />
-    <state x="633" y="586" width="657" height="374" key="NewPhpClassDialog" timestamp="1583488127293">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="743" y="524" key="FileChooserDialogImpl/0.241.1920.1050/1920.0.1440.900@0.241.1920.1050" timestamp="1585643078919" />
+    <state x="743" y="313" width="424" height="487" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1583525892752" />
+    <state x="633" y="797" width="633" height="374" key="NewPhpClassDialog" timestamp="1585559946537">
+      <screen x="0" y="241" width="1920" height="1050" />
     </state>
+    <state x="633" y="797" width="633" height="374" key="NewPhpClassDialog/0.241.1920.1050/1920.0.1440.900@0.241.1920.1050" timestamp="1585559946537" />
     <state x="633" y="586" width="657" height="374" key="NewPhpClassDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583488127293" />
     <state x="456" y="190" width="1007" height="733" key="SettingsEditor" timestamp="1583264017081">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="456" y="190" width="1007" height="733" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1583264017081" />
-    <state x="653" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1583264061714">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="653" y="593" key="com.intellij.ide.util.TipDialog" timestamp="1585653455170">
+      <screen x="0" y="241" width="1920" height="1050" />
     </state>
-    <state x="653" y="382" key="com.intellij.ide.util.TipDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583264061714" />
+    <state x="653" y="593" key="com.intellij.ide.util.TipDialog/0.241.1920.1050/1920.0.1440.900@0.241.1920.1050" timestamp="1585653455170" />
+    <state x="653" y="382" key="com.intellij.ide.util.TipDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583525815119" />
   </component>
 </project>
